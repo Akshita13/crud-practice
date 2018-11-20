@@ -1,0 +1,29 @@
+<form [formGroup]="ordersForm" (ngSubmit)="addOrders(ordersForm.value)">
+  <div>
+  <div>
+      itemName:
+    <input type="text" formControlName="itemName">
+  </div>
+  <br>
+
+  <div>
+    price:
+    <input type="number" formControlName="price">
+  </div>
+  <br> 
+
+  <div>
+    address:
+    <input type="text" formControlName="address">
+  </div>
+  <br>
+
+  <div>
+    mobileNumber:
+    <input type="number" formControlName="mobileNumber">
+  </div>
+  <br>
+
+  <button type="submit" name="submit">submit</button>
+</div>
+</form>
