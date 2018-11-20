@@ -8,17 +8,22 @@ export class OrderService {
 
   private url:string ;
   constructor(private http:HttpClient) { 
-    this.url='api/orders'
+    this.url='api/order';
   }
 
-  getOrder():Observable<Order[]>
+ public getOrder():Observable<Order[]>
   { 
     return this.http.get<Order[]>(this.url);
   }
 
-  addOrder(order):Observable<Order>
+  public addOrder(order:Order):Observable<Order>
   {
     return this.http.post<Order>(this.url,order);
+  }
+
+  public deleteOrder(id:number):Observable<Order>
+  {
+    return this.http.delete<Order>(this.url+"/"+id);
   }
 
 }

@@ -1,1 +1,3 @@
-<div *ngFor="let order of orders">{{order | json}}</div>
+<div *ngFor="let order of orders">{{order | json}}
+<button (click)="deleteOrders(order.id)">delete</button>
+</div>

@@ -17,6 +17,13 @@ export class ViewComponent implements OnInit {
     this.getOrders();
   }
 
+  
+
+  public deleteOrders(id):void{
+    this.orderService.deleteOrder(id).subscribe();
+    this.getOrders();
+  }
+
   public getOrders(): void {
    
     this.orderService.getOrder().subscribe(order=>this.orders=order);

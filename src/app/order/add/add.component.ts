@@ -30,7 +30,7 @@ export class AddComponent implements OnInit {
   }
 
 
-  public addOrders(ordersForm):void
+  public addOrders(ordersForm)
   {
     this.orderService.addOrder(ordersForm).subscribe(()=>  {
     this.ordersForm.reset();
