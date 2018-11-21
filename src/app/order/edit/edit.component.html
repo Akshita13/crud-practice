@@ -1,3 +1,29 @@
-<p>
-  edit works!
-</p>
+<form [formGroup]="ordersForm" >
+  <div>
+  <div>
+      itemName:
+    <input type="text" formControlName="itemName">
+  </div>
+  <br>
+
+  <div>
+    price:
+    <input type="number" formControlName="price">
+  </div>
+  <br> 
+
+  <div>
+    address:
+    <input type="text" formControlName="address">
+  </div>
+  <br>
+
+  <div>
+    mobileNumber:
+    <input type="number" formControlName="mobileNumber">
+  </div>
+  <br>
+  <button (click)="updateOrders()">submit</button>
+</div>
+</form>
+

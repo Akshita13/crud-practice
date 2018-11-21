@@ -1,3 +1,4 @@
 <div *ngFor="let order of orders">{{order | json}}
+    <button routerLink="/edit/{{order.id}}">Edit</button>
 <button (click)="deleteOrders(order.id)">delete</button>
 </div>

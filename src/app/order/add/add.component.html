@@ -1,29 +1,28 @@
-<form [formGroup]="ordersForm" (ngSubmit)="addOrders(ordersForm.value)">
+<form [formGroup]="ordersForm" (ngSubmit)="addOrders()">
   <div>
-  <div>
-      itemName:
-    <input type="text" formControlName="itemName">
+   <div [ngClass]="{'has-error':hasFieldError('itemName')}">   
+    itemName: <input type="text" formControlName="itemName">
+    <label [hidden]="!hasFieldError('itemName')">item name is required</label> 
   </div>
   <br>
 
-  <div>
-    price:
-    <input type="number" formControlName="price">
+  <div [ngClass]="{'has-error':hasFieldError('price')}">
+    price: <input type="number" formControlName="price">
+    <label [hidden]="!hasFieldError('price')">price is required</label> 
   </div>
   <br> 
 
-  <div>
-    address:
-    <input type="text" formControlName="address">
+  <div [ngClass]="{'has-error':hasFieldError('address')}">
+    address:<input type="text" formControlName="address">
+    <label [hidden]="!hasFieldError('address')">address is required</label> 
   </div>
   <br>
 
-  <div>
-    mobileNumber:
-    <input type="number" formControlName="mobileNumber">
+  <div [ngClass]="{'has-error':hasFieldError('mobileNumber')}">
+    mobileNumber:<input type="number" formControlName="mobileNumber">
+    <label [hidden]="!hasFieldError('mobileNumber')">mobile number is required</label>
   </div>
   <br>
-
-  <button type="submit" name="submit">submit</button>
+  <input type="submit" name="submit" [disabled]="ordersForm!.valid">
 </div>
 </form>

@@ -16,7 +16,7 @@ export class OrderService {
     return this.http.get<Order[]>(this.url);
   }
 
-  public addOrder(order:Order):Observable<Order>
+  public addOrder(order):Observable<Order>
   {
     return this.http.post<Order>(this.url,order);
   }
@@ -24,6 +24,16 @@ export class OrderService {
   public deleteOrder(id:number):Observable<Order>
   {
     return this.http.delete<Order>(this.url+"/"+id);
+  }
+
+  public editOrder(id):Observable<Order[]>
+  {
+    return this.http.get<Order[]>(this.url+"/"+id);
+  }
+
+  public updateOrder(order):Observable<Order>
+  {
+    return this.http.put<Order>(this.url,order);
   }
 
 }
